@@ -1,5 +1,7 @@
+// 절대경로 적용
 {
   "compilerOptions": {
     "baseUrl": "src"
-  }
+  },
+  "include": ["src"]
 }
