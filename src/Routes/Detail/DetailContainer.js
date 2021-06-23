@@ -7,10 +7,24 @@ export default class extends React.Component {
     error: null,
     loading: true,
   };
-  // api 및 error 처리
+
+  async componentDidMount() {
+    const {
+      match: {
+        params: { id },
+      },
+      history: { push },
+    } = this.props;
+    const parseId = Number(id);
+    if (isNaN(parseId)) {
+      push("/");
+      return;
+    }
+  }
 
   render() {
     const { result, error, loading } = this.state;
+    console.log(this.props);
     return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
