@@ -33,11 +33,9 @@ export default class extends React.Component {
     try {
       if (isMovie) {
         // movie 찾음
-        const request = await moviesApi.movieDetail(parseId);
-        result = request.data;
+        ({ data: result } = await moviesApi.movieDetail(parseId));
       } else {
-        const request = await tvApi.tvDetail(parseId);
-        result = request.data;
+        ({ data: result } = await tvApi.tvDetail(parseId));
       }
       console.log(result);
     } catch (error) {
