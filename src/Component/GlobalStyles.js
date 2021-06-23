@@ -11,7 +11,7 @@ const globalStyles = createGlobalStyle`
         font-size:12px;
         color:white;
         background-color:rgba(20, 20, 20, 1);
-        padding-top: 50px;
+        padding-top: 80px;
     }
     a{
         text-decoration:none;
