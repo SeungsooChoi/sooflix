@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Component/Section";
 import Loader from "Component/Loader";
 import Message from "Component/Message";
+import Poster from "Component/Poster";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -17,21 +18,42 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster
+              key={movie.id}
+              id={movie.id}
+              imageUrl={movie.poster_path}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {upcoming && upcoming.length > 0 && (
         <Section title="Upcoming Movies">
           {upcoming.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster
+              key={movie.id}
+              id={movie.id}
+              imageUrl={movie.poster_path}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="Popular Movies">
           {popular.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster
+              key={movie.id}
+              id={movie.id}
+              imageUrl={movie.poster_path}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
