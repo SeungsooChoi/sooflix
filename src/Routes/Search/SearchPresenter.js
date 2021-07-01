@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import Loader from "Component/Loader";
 import Section from "Component/Section";
 import Message from "Component/Message";
 import Poster from "Component/Poster";
 
 const Container = styled.div`
-  padding: 0px 20px;
+  padding: 20px;
 `;
 
 const Form = styled.form`
@@ -31,6 +32,9 @@ const SearchPresenter = ({
   error,
 }) => (
   <Container>
+    <Helmet>
+      <title>Search | sooflix</title>
+    </Helmet>
     <Form onSubmit={handleSubmit}>
       <Input
         placeholder="Search Movies and TV Shows"
