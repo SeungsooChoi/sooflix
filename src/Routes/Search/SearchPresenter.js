@@ -52,6 +52,7 @@ const SearchPresenter = ({
                 title={movie.original_title}
                 rating={movie.vote_average}
                 year={movie.release_date && movie.release_date.substring(0, 4)}
+                isMovie={true}
               />
             ))}
           </Section>
@@ -66,6 +67,7 @@ const SearchPresenter = ({
                 title={tv.original_name}
                 rating={tv.vote_average}
                 year={tv.first_air_date && tv.first_air_date.substring(0, 4)}
+                isMovie={false}
               />
             ))}
           </Section>

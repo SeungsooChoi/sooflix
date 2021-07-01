@@ -7,7 +7,7 @@ import Message from "Component/Message";
 import Poster from "Component/Poster";
 
 const Container = styled.div`
-  padding: 0px 20px;
+  padding: 20px;
 `;
 
 const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
@@ -25,6 +25,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
               title={movie.original_title}
               rating={movie.vote_average}
               year={movie.release_date && movie.release_date.substring(0, 4)}
+              isMovie={true}
             />
           ))}
         </Section>
@@ -39,6 +40,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
               title={movie.original_title}
               rating={movie.vote_average}
               year={movie.release_date && movie.release_date.substring(0, 4)}
+              isMovie={true}
             />
           ))}
         </Section>
@@ -53,6 +55,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
               title={movie.original_title}
               rating={movie.vote_average}
               year={movie.release_date && movie.release_date.substring(0, 4)}
+              isMovie={true}
             />
           ))}
         </Section>
