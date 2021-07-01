@@ -10,7 +10,7 @@ import Search from "Routes/Search";
 import Detail from "Routes/Detail";
 import Header from "Component/Header";
 
-export default () => (
+const Routers = () => (
   <Router>
     <>
       <Header />
@@ -25,3 +25,5 @@ export default () => (
     </>
   </Router>
 );
+
+export default Routers;

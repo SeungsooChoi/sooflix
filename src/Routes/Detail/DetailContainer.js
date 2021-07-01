@@ -2,7 +2,7 @@ import { moviesApi, tvApi } from "api";
 import React from "react";
 import DetailPresenter from "./DetailPresenter";
 
-export default class extends React.Component {
+class DetailContainer extends React.Component {
   constructor(props) {
     super(props);
     const {
@@ -50,3 +50,5 @@ export default class extends React.Component {
     return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
+
+export default DetailContainer;
