@@ -68,7 +68,21 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, loading, error }) =>
+const IMDBLink = styled.a`
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 16px;
+`;
+
+const IMDBImage = styled.img`
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+`;
+
+const DetailPresenter = ({ result, loading, error, isMovie }) =>
   loading ? (
     <>
       <Helmet>
@@ -109,7 +123,8 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
             <Divider>•</Divider>
             <Item>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} min
+              {result.runtime > 0 ? result.runtime : result.episode_run_time[0]}{" "}
+              min
             </Item>
             <Divider>•</Divider>
             <Item>
@@ -122,6 +137,11 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          <IMDBLink href={`https://www.imdb.com/title/${result.imdb_id}`}>
+            <IMDBImage src="https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png" />
+            IMDB Link
+          </IMDBLink>
+          {/* <Route path={isMovie} component={Detail} /> */}
         </Data>
       </Content>
     </Container>
